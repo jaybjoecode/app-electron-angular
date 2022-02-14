@@ -1,0 +1,68 @@
+<div class="container-fluid mt--7">
+
+  <!-- Body -->
+
+  <!-- Table -->
+  <div class="row justify-content-center">
+    <div class="col-8">
+      <div class="card shadow mb-5">
+        <div class="card-header border-0">
+          <div class="row align-items-center">
+            <div class="col">
+              <h1 class="mb-0">Create Blog</h1>
+            </div>
+
+          </div>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="form">
+            <div class="">
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="name">Name</label>
+                    <input type="text" formControlName="name" id="name" class="form-control form-control-alternative" placeholder="Username">
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-post">Name</label>
+                    <!-- <input type="text" id="input-post" class="form-control form-control-alternative" placeholder="Username"> -->
+                    <select formControlName="post" class="form-control form-control-alternative" id="input-post">
+                      <option *ngFor="let p of posts" value="{{p._id}}">{{p.title}}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="">
+                    <div class="form-group">
+                      <label>Description</label>
+                      <textarea formControlName="description" rows="4" class="form-control form-control-alternative" placeholder="A few words about the blog ..."></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </form>
+        </div>
+        <div class="card-footer py-4">
+          <nav aria-label="...">
+            <div class="text-right">
+              <div class="btn btn-warning text-white shadow">
+                Cancel
+              </div>
+              <div (click)="save()" class="btn btn-primary text-white shadow">
+                Create
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
